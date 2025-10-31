@@ -4,7 +4,11 @@ const axios = require('axios');
 // Placeholder API endpoint - replace with your actual endpoint
 const API_ENDPOINT = process.env.API_ENDPOINT || 'https://cloud.blackbox.ai/api/cron/resume-stalled';
 /**
- * Calls the API with the appropriate frequency parameter
+ * Calls the API with the appropriate frequency parameter.
+ *
+ * This function retrieves the current hour and determines the frequency using the getFrequency function.
+ * It then makes an asynchronous GET request to the specified API endpoint, logging the current hour, frequency,
+ * and the response status. In case of an error, it logs the error message and any available response details.
  */
 async function callAPI() {
   try {
